@@ -10,7 +10,7 @@ FIGURE_UNICODE = {
     "Knight": ("♘", "♞"),
     "Pawn":   ("♙", "♟"),
 }
-
+#chessboard
 def zeichne_schachbrett(spielstand, feldgrosse=60):
     breite = hohe = feldgrosse * 8
     bild = Image.new("RGB", (breite, hohe), "white")
@@ -4892,7 +4892,7 @@ def game_start_white():
              ("Rook", (1,1)),
              ("Knight", (2,1)),
              ("Bishop", (3,1)),
-             ("Queen", (6,4)),
+             ("Queen", (4,1)),
              ("King", (5,1)),
              ("Bishop", (6,1)),
              ("Knight", (7,1)),
@@ -4902,14 +4902,14 @@ def game_start_black():
              ("Pawn", (2,7)),
              ("Pawn", (3,7)),
              ("Pawn", (4,7)),
-             ("Pawn", (5,5)),
+             ("Pawn", (5,7)),
              ("Pawn", (6,7)),
              ("Pawn", (7,7)),
              ("Pawn", (8,7)),
              ("Rook", (1,8)),
              ("Knight", (2,8)),
              ("Bishop", (3,8)),
-             ("Queen", (4,4)),
+             ("Queen", (4,8)),
              ("King", (5,8)),
              ("Bishop", (6,8)),
              ("Knight", (7,8)),
