@@ -5129,6 +5129,7 @@ def bpawn_state_change(n, number, newstate, square):
 
 
 def white_standard_move():
+    global new_white_state, new_brook1move, new_brook2move, new_wrook1move, new_wrook2move, newbrook1move, newbrook2move
     if checkstate == "true":
         if position in black_occupied(n):
             black_remove(position, n)
@@ -5154,10 +5155,10 @@ def white_standard_move():
 
 
 def black_standard_move():
+    global new_white_state, new_brook1move, new_brook2move, new_wrook1move, new_wrook2move, newbrook1move, newbrook2move
     if checkstate == "true":
         if position in white_occupied(n):
             white_remove(position, n)
-            print(x)
         if wKing(n) in total_attacks_black(n):
             if not (bKing(n) in total_attacks_white(n)):
 
@@ -5179,6 +5180,29 @@ def black_standard_move():
                 newwrook2move.append(wrook2move[n])
 
 
+def allowed_moves_white():
+    moves = []
+    a = "total_attacks_white"
+    b = []
+    for i in len(game_state_white):
+        for x in black_occupied(i):
+            b.append(x)
+    b = list(set(b))
+    for i in a:
+        if i not in b:
+            k = i.copy()
+            k.append(False)
+            moves.append(k)
+
+
+
+
+
+
+
+
+
+
 #starting position in game - to place in initialise game
 game_state_white = game_start_white()
 game_state_black = game_start_black()
@@ -5189,6 +5213,380 @@ wrook2move = [0]
 brook1move = [0]
 brook2move = [0]
 game = []
+game_state = [game_state_white, game_state_black, wrook1move, wrook2move, brook1move, brook2move]
+
+def make_move_white(white_move, game_state):
+    global wskip, bskip, wrook1move, brook1move
+    global wrook2move, brook2move
+    global game_state_white, game_state_black
+    global checkstate
+    global position
+    global new_white_state, new_brook1move, new_brook2move
+    global new_wrook1move, new_wrook2move, new_black_state
+    game_state_white = game_state[0]
+    game_state_black = game_state[1]
+    wrook1move = game_state[2]
+    wrook2move = game_state[3]
+    brook1move = game_state[4]
+    brook2move = game_state[5]
+    total_game_state = []
+    statenumber = len(game_state_white)
+    for n in range(statenumber):
+        total_game_state.append([game_state_white[n], game_state_black[n]])
+    starte_viewer_mit_positionen(total_game_state)
+    new_white_state = []
+
+
+    if white_move == "castle king":
+        for n in range(statenumber):
+            if wrook2move[n] == 0 and not ((6, 1) in total_attacks_black(n)) and not (
+                    (7, 1) in total_attacks_black(n)) and not ((6, 1) in black_occupied(n)) and not (
+                    (7, 1) in black_occupied(n)) and not ((7, 1) in white_occupied(n)) and not (
+                    (6, 1) in white_occupied(n)):
+                x = []
+                for o in game_state_white: x.append(o)
+                wpawn_state_change(n, 12, "King", (7, 1))
+                wpawn_state_change(n, 15, "Rook", (6, 1))
+                new_white_state.append((game_state_white[n], game_state_black[n]))
+                newbrook1move.append(brook1move[n])
+                newbrook2move.append(brook2move[n])
+                newwrook1move.append(1)
+                newwrook2move.append(1)
+                game_state_white = x
+    if white_move == "castle queen":
+        for n in range(statenumber):
+            if wrook1move[n] == 0 and not ((2, 1) in total_attacks_black(n)) and not (
+                    (3, 1) in total_attacks_black(n)) and not ((2, 1) in black_occupied(n)) and not (
+                    (3, 1) in black_occupied(n)) and not ((2, 1) in white_occupied(n)) and not (
+                    (3, 1) in white_occupied(n)) and not (
+                    (4, 1) in white_occupied(n)) and not (
+                    (4, 1) in black_occupied(n)) and not (
+                    (4, 1) in total_attacks_black(n)):
+                x = []
+                for o in game_state_white: x.append(o)
+                wpawn_state_change(n, 12, "King", (3, 1))
+                wpawn_state_change(n, 8, "Rook", (4, 1))
+                newbrook1move.append(brook1move[n])
+                newbrook2move.append(brook2move[n])
+                newwrook1move.append(1)
+                newwrook2move.append(1)
+                game_state_white = x
+    if white_move != "castle king" and white_move != "castle queen":
+        if white_move[0] == "x":
+            kill = "true"
+            if white_move[1] == "a":
+                x = 1
+            if white_move[1] == "b":
+                x = 2
+            if white_move[1] == "c":
+                x = 3
+            if white_move[1] == "d":
+                x = 4
+            if white_move[1] == "e":
+                x = 5
+            if white_move[1] == "f":
+                x = 6
+            if white_move[1] == "g":
+                x = 7
+            if white_move[1] == "h":
+                x = 8
+            y = int(white_move[2])
+            if len(white_move) > 4:
+                checkstate = "true"
+            else:
+                checkstate = "false"
+        else:
+            kill = "false"
+            if white_move[0] == "a":
+                x = 1
+            if white_move[0] == "b":
+                x = 2
+            if white_move[0] == "c":
+                x = 3
+            if white_move[0] == "d":
+                x = 4
+            if white_move[0] == "e":
+                x = 5
+            if white_move[0] == "f":
+                x = 6
+            if white_move[0] == "g":
+                x = 7
+            if white_move[0] == "h":
+                x = 8
+            y = int(white_move[1])
+        checkstate = "false"
+        if len(white_move) > 4:
+            checkstate = "true"
+        position = (x, y)  # NOT X Y!!!
+        a = x
+        b = y
+        for n in range(statenumber):
+            whitestate = game_state_white
+            blackstate = game_state_black
+            if (position in black_occupied(n) and kill == "true") or (
+                    not (position in black_occupied(n)) and kill == "false"):
+                if position in total_attacks_white(n):
+
+                    if position in attack_wPawn1(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        state = game_state_white[n][0][0]
+                        wpawn_state_change(n, 0, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][0][1][1] == 8:
+                            if game_state_white[n][0][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 0, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn2(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        state = game_state_white[n][1][0]
+                        wpawn_state_change(n, 1, state, position)
+                        white_standard_move()
+                        if game_state_white[n][1][1][1] == 8:
+                            if game_state_white[n][1][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 1, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn3(n):
+                        y = game_state_black[n].copy()
+                        x = game_state_white[n].copy()
+                        state = game_state_white[n][2][0]
+                        wpawn_state_change(n, 2, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][2][1][1] == 8:
+                            if game_state_white[n][2][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 2, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn4(n):
+                        y = game_state_black[n].copy()
+                        x = game_state_white[n].copy()
+                        state = game_state_white[n][3][0]
+                        wpawn_state_change(n, 3, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][3][1][1] == 8:
+                            if game_state_white[n][3][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 3, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn5(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        state = game_state_white[n][4][0]
+                        wpawn_state_change(n, 4, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][4][1][1] == 8:
+                            if game_state_white[n][4][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 4, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn6(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        state = game_state_white[n][5][0]
+                        wpawn_state_change(n, 5, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][5][1][1] == 8:
+                            if game_state_white[n][5][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 5, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn7(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        state = game_state_white[n][6][0]
+                        wpawn_state_change(n, 6, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][6][1][1] == 8:
+                            if game_state_white[n][6][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 6, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wPawn8(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        state = game_state_white[n][7][0]
+                        wpawn_state_change(n, 7, state, position)
+                        white_standard_move()
+
+                        if game_state_white[n][7][1][1] == 8:
+                            if game_state_white[n][7][0] == "Pawn":
+                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                if len(new_pawn_state) > 1:
+                                    x = game_state_white[n]
+                                    wpawn_state_change(n, 7, new_pawn_state, position)
+                                    white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wRook1(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        wpawn_state_change(n, 8, "Rook", position)
+                        if checkstate == "true":
+                            if bKing(n) in total_attacks_white(n):
+                                if not (wKing(n) in total_attacks_black(n)):
+                                    new_white_state.append((game_state_white[n], game_state_black[n]))
+                                    newbrook1move.append(brook1move[n])
+                                    newbrook2move.append(brook2move[n])
+                                    newwrook1move.append(1)
+                                    newwrook2move.append(wrook2move[n])
+                        if checkstate == "false":
+                            if not (bKing(n) in total_attacks_white(n)):
+                                if not (wKing(n) in total_attacks_black(n)):
+                                    new_white_state.append((game_state_white[n], game_state_black[n]))
+                                    newbrook1move.append(brook1move[n])
+                                    newbrook2move.append(brook2move[n])
+                                    newwrook1move.append(1)
+                                    newwrook2move.append(wrook2move[n])
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wKnight1(n):
+                        y = game_state_black[n].copy()
+                        x = game_state_white[n].copy()
+                        wpawn_state_change(n, 9, "Knight", position)
+                        white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wBishop1(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        wpawn_state_change(n, 10, "Bishop", position)
+                        white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wQueen(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        wpawn_state_change(n, 11, "Queen", position)
+                        white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wKing(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        wpawn_state_change(n, 12, "King", position)
+                        if checkstate == "true":
+                            if bKing(n) in total_attacks_white(n):
+                                if not (wKing(n) in total_attacks_black(n)):
+                                    new_white_state.append((game_state_white[n], game_state_black[n]))
+
+                                    newbrook1move.append(brook1move[n])
+                                    newbrook2move.append(brook2move[n])
+
+                                    newwrook1move.append(1)
+                                    newwrook2move.append(1)
+                        if checkstate == "false":
+                            if not (bKing(n) in total_attacks_white(n)):
+                                if not (wKing(n) in total_attacks_black(n)):
+                                    new_white_state.append((game_state_white[n], game_state_black[n]))
+                                    newbrook1move.append(brook1move[n])
+                                    newbrook2move.append(brook2move[n])
+                                    newwrook1move.append(1)
+                                    newwrook2move.append(1)
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wBishop2(n):
+                        y = game_state_black[n].copy()
+                        x = game_state_white[n].copy()
+                        wpawn_state_change(n, 13, "Bishop", position)
+                        white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wKnight2(n):
+                        x = game_state_white[n].copy()
+                        y = game_state_black[n].copy()
+                        wpawn_state_change(n, 14, "Knight", position)
+                        white_standard_move()
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+                    if position in attack_wRook2(n):
+                        y = game_state_black[n].copy()
+                        x = game_state_white[n].copy()
+                        wpawn_state_change(n, 15, "Rook", position)
+                        if checkstate == "true":
+                            if bKing(n) in total_attacks_white(n):
+                                if not (wKing(n) in total_attacks_black(n)):
+                                    new_white_state.append((game_state_white[n], game_state_black[n]))
+                                    new_black_state.append((game_state_black[n], game_state_white[n]))
+                                    newbrook1move.append(brook1move[n])
+                                    newbrook2move.append(brook2move[n])
+                                    newwrook1move.append(wrook1move[n])
+                                    newwrook2move.append(1)
+                        if checkstate == "false":
+                            if not (wKing(n) in total_attacks_black(n)):
+                                if not (bKing(n) in total_attacks_white(n)):
+                                    new_white_state.append((game_state_white[n], game_state_black[n]))
+                                    new_black_state.append((game_state_black[n], game_state_white[n]))
+                                    newbrook1move.append(brook1move[n])
+                                    newbrook2move.append(brook2move[n])
+                                    newwrook1move.append(wrook1move[n])
+                                    newwrook2move.append(1)
+                        game_state_white[n] = x
+                        game_state_black[n] = y
+    new_white_state = set(tuple(tuple(q) for q in t) for t in new_white_state)
+    new_white_state = list(list(list(q) for q in t) for t in new_white_state)
+    if len(new_white_state) == 0:
+        print("Turn impossible")
+        return()
+    else:
+        game.append(white_move)
+
+        brook1move = newbrook1move
+        brook2move = newbrook2move
+        wrook1move = newwrook1move
+        wrook2move = newwrook2move
+        game_state_white = []
+        game_state_black = []
+        for r in range(len(new_white_state)):
+            game_state_white.append(new_white_state[r][0])
+            game_state_black.append(new_white_state[r][1])
+        starte_viewer_mit_positionen(new_white_state)
+        game_state.append(game_state_white)
+        game_state.append(game_state_black)
+        game_state.append(wrook1move)
+        game_state.append(wrook2move)
+        game_state.append(brook1move)
+        game_state.append(brook2move)
+        return game_state
+
+
+
 for turn in range (6000):
   if wskip == 0:
       newbrook1move = []
@@ -5205,6 +5603,9 @@ for turn in range (6000):
           total_game_state.append([game_state_white[n], game_state_black[n]])
       starte_viewer_mit_positionen(total_game_state)
       white_move = input( )
+      game_state = [game_state_white, game_state_black, wrook1move, wrook2move, brook1move, brook2move]
+
+      make_move_white(white_move, game_state)
 
       if white_move == "castle king":
           for n in range(statenumber):
