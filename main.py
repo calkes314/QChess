@@ -5324,132 +5324,21 @@ def make_move_white(white_move, game_state):
                 if position in total_attacks_white(n):
 
                     if position in attack_wPawn1(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        state = game_state_white[n][0][0]
-                        wpawn_state_change(n, 0, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][0][1][1] == 8:
-                            if game_state_white[n][0][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 0, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 0, position)
                     if position in attack_wPawn2(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        state = game_state_white[n][1][0]
-                        wpawn_state_change(n, 1, state, position)
-                        white_standard_move()
-                        if game_state_white[n][1][1][1] == 8:
-                            if game_state_white[n][1][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 1, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 1, position)
                     if position in attack_wPawn3(n):
-                        y = game_state_black[n].copy()
-                        x = game_state_white[n].copy()
-                        state = game_state_white[n][2][0]
-                        wpawn_state_change(n, 2, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][2][1][1] == 8:
-                            if game_state_white[n][2][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 2, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 2, position)
                     if position in attack_wPawn4(n):
-                        y = game_state_black[n].copy()
-                        x = game_state_white[n].copy()
-                        state = game_state_white[n][3][0]
-                        wpawn_state_change(n, 3, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][3][1][1] == 8:
-                            if game_state_white[n][3][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 3, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 3, position)
                     if position in attack_wPawn5(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        state = game_state_white[n][4][0]
-                        wpawn_state_change(n, 4, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][4][1][1] == 8:
-                            if game_state_white[n][4][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 4, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 4, position)
                     if position in attack_wPawn6(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        state = game_state_white[n][5][0]
-                        wpawn_state_change(n, 5, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][5][1][1] == 8:
-                            if game_state_white[n][5][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 5, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 5, position)
                     if position in attack_wPawn7(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        state = game_state_white[n][6][0]
-                        wpawn_state_change(n, 6, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][6][1][1] == 8:
-                            if game_state_white[n][6][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 6, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 6, position)
                     if position in attack_wPawn8(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        state = game_state_white[n][7][0]
-                        wpawn_state_change(n, 7, state, position)
-                        white_standard_move()
-
-                        if game_state_white[n][7][1][1] == 8:
-                            if game_state_white[n][7][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    wpawn_state_change(n, 7, new_pawn_state, position)
-                                    white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_pawn(n, 7, position)
                     if position in attack_wRook1(n):
                         x = game_state_white[n].copy()
                         y = game_state_black[n].copy()
@@ -5479,26 +5368,11 @@ def make_move_white(white_move, game_state):
                         game_state_white[n] = x
                         game_state_black[n] = y
                     if position in attack_wKnight1(n):
-                        y = game_state_black[n].copy()
-                        x = game_state_white[n].copy()
-                        wpawn_state_change(n, 9, "Knight", position)
-                        white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_move(n, 9, "Knight", position)
                     if position in attack_wBishop1(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        wpawn_state_change(n, 10, "Bishop", position)
-                        white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_move(n, 10, "Bishop", position)
                     if position in attack_wQueen(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        wpawn_state_change(n, 11, "Queen", position)
-                        white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_move(n, 11, "Queen", position)
                     if position in attack_wKing(n):
                         x = game_state_white[n].copy()
                         y = game_state_black[n].copy()
@@ -5528,19 +5402,9 @@ def make_move_white(white_move, game_state):
                         game_state_white[n] = x
                         game_state_black[n] = y
                     if position in attack_wBishop2(n):
-                        y = game_state_black[n].copy()
-                        x = game_state_white[n].copy()
-                        wpawn_state_change(n, 13, "Bishop", position)
-                        white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_move(n, 13, "Bishop", position)
                     if position in attack_wKnight2(n):
-                        x = game_state_white[n].copy()
-                        y = game_state_black[n].copy()
-                        wpawn_state_change(n, 14, "Knight", position)
-                        white_standard_move()
-                        game_state_white[n] = x
-                        game_state_black[n] = y
+                        white_part_move(n, 14, "Knight", position)
                     if position in attack_wRook2(n):
                         y = game_state_black[n].copy()
                         x = game_state_white[n].copy()
@@ -5599,7 +5463,59 @@ def make_move_white(white_move, game_state):
         return game_state
 
 
+def white_part_move(n, number, newstate, position):
+    global x, y, game_state_black, game_state_white
+    x = game_state_white[n].copy()
+    y = game_state_black[n].copy()
+    wpawn_state_change(n, number, newstate, position)
+    white_standard_move()
+    game_state_white[n] = x
+    game_state_black[n] = y
 
+def black_part_move(n, number, newstate, position):
+    global x, y, game_state_black, game_state_white
+    x = game_state_black[n].copy()
+    y = game_state_white[n].copy()
+    bpawn_state_change(n, number, newstate, position)
+    black_standard_move()
+    game_state_black[n] = x
+    game_state_white[n] = y
+
+def black_part_pawn(n, number, position):
+    global x, y, game_state_black, game_state_white, new_pawn_state, state
+    x = game_state_black[n].copy()
+    y = game_state_white[n].copy()
+    state = game_state_black[n][number][0]
+    bpawn_state_change(n, number, state, position)
+    black_standard_move()
+
+    if game_state_black[n][number][1][1] == 8:
+        if game_state_black[n][number][0] == "Pawn":
+            new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+            if len(new_pawn_state) > 1:
+                x = game_state_black[n]
+                bpawn_state_change(n, number, new_pawn_state, position)
+                black_standard_move()
+    game_state_black[n] = x
+    game_state_white[n] = y
+
+def white_part_pawn(n, number, position):
+    global x, y, game_state_black, game_state_white, new_pawn_state, state
+    x = game_state_white[n].copy()
+    y = game_state_black[n].copy()
+    state = game_state_white[n][number][0]
+    wpawn_state_change(n, number, state, position)
+    white_standard_move()
+
+    if game_state_white[n][number][1][1] == 8:
+        if game_state_white[n][number][0] == "Pawn":
+            new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+            if len(new_pawn_state) > 1:
+                x = game_state_white[n]
+                wpawn_state_change(n, number, new_pawn_state, position)
+                white_standard_move()
+    game_state_white[n] = x
+    game_state_black[n] = y
 
 def make_move_black(black_move, game_state):
 
@@ -5720,132 +5636,21 @@ def make_move_black(black_move, game_state):
                 if position in total_attacks_black(n):
 
                     if position in attack_bPawn1(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][0][0]
-                        bpawn_state_change(n, 0, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][0][1][1] == 8:
-                            if game_state_black[n][0][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_black[n]
-                                    bpawn_state_change(n, 0, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 0, position)
                     if position in attack_bPawn2(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][1][0]
-                        bpawn_state_change(n, 1, state, position)
-                        black_standard_move()
-                        if game_state_black[n][1][1][1] == 8:
-                            if game_state_black[n][1][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_black[n]
-                                    bpawn_state_change(n, 1, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 1, position)
                     if position in attack_bPawn3(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][2][0]
-                        bpawn_state_change(n, 2, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][2][1][1] == 8:
-                            if game_state_black[n][2][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_black[n]
-                                    bpawn_state_change(n, 2, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 2, position)
                     if position in attack_bPawn4(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][3][0]
-                        bpawn_state_change(n, 3, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][3][1][1] == 8:
-                            if game_state_black[n][3][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_black[n]
-                                    bpawn_state_change(n, 3, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 3, position)
                     if position in attack_bPawn5(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][4][0]
-                        bpawn_state_change(n, 4, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][4][1][1] == 8:
-                            if game_state_black[n][4][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    bpawn_state_change(n, 4, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 4, position)
                     if position in attack_bPawn6(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][5][0]
-                        bpawn_state_change(n, 5, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][5][1][1] == 8:
-                            if game_state_black[n][5][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    bpawn_state_change(n, 5, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 5, position)
                     if position in attack_bPawn7(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][6][0]
-                        bpawn_state_change(n, 6, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][6][1][1] == 8:
-                            if game_state_black[n][6][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_white[n]
-                                    bpawn_state_change(n, 6, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 6, position)
                     if position in attack_bPawn8(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        state = game_state_black[n][7][0]
-                        bpawn_state_change(n, 7, state, position)
-                        black_standard_move()
-
-                        if game_state_black[n][7][1][1] == 8:
-                            if game_state_black[n][7][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
-                                if len(new_pawn_state) > 1:
-                                    x = game_state_black[n]
-                                    bpawn_state_change(n, 7, new_pawn_state, position)
-                                    black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_pawn(n, 7, position)
                     if position in attack_bRook1(n):
                         x = game_state_black[n].copy()
                         y = game_state_white[n].copy()
@@ -5879,26 +5684,17 @@ def make_move_black(black_move, game_state):
                         game_state_black[n] = x
                         game_state_white[n] = y
                     if position in attack_bKnight1(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        bpawn_state_change(n, 9, "Knight", position)
-                        black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+
+                        black_part_move(n, 9, "Knight", position)
+
                     if position in attack_bBishop1(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        bpawn_state_change(n, 10, "Bishop", position)
-                        black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+
+                        black_part_move(n, 10, "Bishop", position)
+
                     if position in attack_bQueen(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        bpawn_state_change(n, 11, "Queen", position)
-                        black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+
+                        black_part_move(n, 11, "Queen", position)
+
                     if position in attack_bKing(n):
                         x = game_state_black[n].copy()
                         y = game_state_white[n].copy()
@@ -5933,19 +5729,12 @@ def make_move_black(black_move, game_state):
                         game_state_white[n] = y
 
                     if position in attack_bBishop2(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        bpawn_state_change(n, 13, "Bishop", position)
-                        black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+
+                        black_part_move(n, 13, "Bishop", position)
+
                     if position in attack_bKnight2(n):
-                        x = game_state_black[n].copy()
-                        y = game_state_white[n].copy()
-                        bpawn_state_change(n, 14, "Knight", position)
-                        black_standard_move()
-                        game_state_black[n] = x
-                        game_state_white[n] = y
+                        black_part_move(n, 14, "Knight", position)
+
                     if position in attack_bRook2(n):
                         x = game_state_black[n].copy()
                         y = game_state_white[n].copy()
