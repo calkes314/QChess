@@ -6041,7 +6041,6 @@ for turn in range (6000):
 
       game_state = make_move_white(white_move, game_state)
 
-      print(game_state)
 
 
 
