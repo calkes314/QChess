@@ -5468,6 +5468,8 @@ def make_move_white(white_move, game_state):
                         y = game_state_black[n].copy()
                         wpawn_state_change(n, 8, "Rook", position)
                         if checkstate == "true":
+                            if position in black_occupied(n):
+                                black_remove(position, n)
                             if bKing(n) in total_attacks_white(n):
                                 if not (wKing(n) in total_attacks_black(n)):
                                     new_white_state.append((game_state_white[n], game_state_black[n]))
@@ -5475,7 +5477,10 @@ def make_move_white(white_move, game_state):
                                     newbrook2move.append(brook2move[n])
                                     newwrook1move.append(1)
                                     newwrook2move.append(wrook2move[n])
+
                         if checkstate == "false":
+                            if position in black_occupied(n):
+                                black_remove(position, n)
                             if not (bKing(n) in total_attacks_white(n)):
                                 if not (wKing(n) in total_attacks_black(n)):
                                     new_white_state.append((game_state_white[n], game_state_black[n]))
@@ -5511,16 +5516,19 @@ def make_move_white(white_move, game_state):
                         y = game_state_black[n].copy()
                         wpawn_state_change(n, 12, "King", position)
                         if checkstate == "true":
+                            if position in black_occupied(n):
+                                black_remove(position, n)
                             if bKing(n) in total_attacks_white(n):
                                 if not (wKing(n) in total_attacks_black(n)):
                                     new_white_state.append((game_state_white[n], game_state_black[n]))
-
                                     newbrook1move.append(brook1move[n])
                                     newbrook2move.append(brook2move[n])
-
                                     newwrook1move.append(1)
                                     newwrook2move.append(1)
+
                         if checkstate == "false":
+                            if position in black_occupied(n):
+                                black_remove(position, n)
                             if not (bKing(n) in total_attacks_white(n)):
                                 if not (wKing(n) in total_attacks_black(n)):
                                     new_white_state.append((game_state_white[n], game_state_black[n]))
@@ -5549,19 +5557,22 @@ def make_move_white(white_move, game_state):
                         x = game_state_white[n].copy()
                         wpawn_state_change(n, 15, "Rook", position)
                         if checkstate == "true":
+                            if position in black_occupied(n):
+                                black_remove(position, n)
                             if bKing(n) in total_attacks_white(n):
                                 if not (wKing(n) in total_attacks_black(n)):
                                     new_white_state.append((game_state_white[n], game_state_black[n]))
-                                    new_black_state.append((game_state_black[n], game_state_white[n]))
                                     newbrook1move.append(brook1move[n])
                                     newbrook2move.append(brook2move[n])
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(1)
+
                         if checkstate == "false":
-                            if not (wKing(n) in total_attacks_black(n)):
-                                if not (bKing(n) in total_attacks_white(n)):
+                            if position in black_occupied(n):
+                                black_remove(position, n)
+                            if not (bKing(n) in total_attacks_white(n)):
+                                if not (wKing(n) in total_attacks_black(n)):
                                     new_white_state.append((game_state_white[n], game_state_black[n]))
-                                    new_black_state.append((game_state_black[n], game_state_white[n]))
                                     newbrook1move.append(brook1move[n])
                                     newbrook2move.append(brook2move[n])
                                     newwrook1move.append(wrook1move[n])
@@ -5850,24 +5861,23 @@ def make_move_black(black_move, game_state):
                         y = game_state_white[n].copy()
                         bpawn_state_change(n, 8, "Rook", position)
                         if checkstate == "true":
-                            if not (bKing(n) in total_attacks_white(n)):
-                                if wKing(n) in total_attacks_black(n):
+                            if position in white_occupied(n):
+                                white_remove(position, n)
+                            if wKing(n) in total_attacks_black(n):
+                                if not (bKing(n) in total_attacks_white(n)):
                                     new_black_state.append((game_state_black[n], game_state_white[n]))
-
                                     newbrook1move.append(1)
                                     newbrook2move.append(brook2move[n])
-
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(wrook2move[n])
-
                         if checkstate == "false":
-                            if not (bKing(n) in total_attacks_white(n)):
-                                if not (wKing(n) in total_attacks_black(n)):
+                            if position in white_occupied(n):
+                                white_remove(position, n)
+                            if not (wKing(n) in total_attacks_black(n)):
+                                if not (bKing(n) in total_attacks_white(n)):
                                     new_black_state.append((game_state_black[n], game_state_white[n]))
-
                                     newbrook1move.append(1)
                                     newbrook2move.append(brook2move[n])
-
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(wrook2move[n])
 
@@ -5899,27 +5909,25 @@ def make_move_black(black_move, game_state):
                         y = game_state_white[n].copy()
                         bpawn_state_change(n, 12, "King", position)
                         if checkstate == "true":
-                            if not (bKing(n) in total_attacks_white(n)):
-                                if wKing(n) in total_attacks_black(n):
+                            if position in white_occupied(n):
+                                white_remove(position, n)
+                            if wKing(n) in total_attacks_black(n):
+                                if not (bKing(n) in total_attacks_white(n)):
                                     new_black_state.append((game_state_black[n], game_state_white[n]))
-
                                     newbrook1move.append(1)
                                     newbrook2move.append(1)
-
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(wrook2move[n])
-
                         if checkstate == "false":
-                            if not (bKing(n) in total_attacks_white(n)):
-                                if not (wKing(n) in total_attacks_black(n)):
+                            if position in white_occupied(n):
+                                white_remove(position, n)
+                            if not (wKing(n) in total_attacks_black(n)):
+                                if not (bKing(n) in total_attacks_white(n)):
                                     new_black_state.append((game_state_black[n], game_state_white[n]))
-
                                     newbrook1move.append(1)
                                     newbrook2move.append(1)
-
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(wrook2move[n])
-
                         game_state_black[n] = x
                         game_state_white[n] = y
 
@@ -5942,24 +5950,23 @@ def make_move_black(black_move, game_state):
                         y = game_state_white[n].copy()
                         bpawn_state_change(n, 15, "Rook", position)
                         if checkstate == "true":
-                            if not (bKing(n) in total_attacks_white(n)):
-                                if wKing(n) in total_attacks_black(n):
+                            if position in white_occupied(n):
+                                white_remove(position, n)
+                            if wKing(n) in total_attacks_black(n):
+                                if not (bKing(n) in total_attacks_white(n)):
                                     new_black_state.append((game_state_black[n], game_state_white[n]))
-
                                     newbrook1move.append(brook1move[n])
                                     newbrook2move.append(1)
-
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(wrook2move[n])
-
                         if checkstate == "false":
+                            if position in white_occupied(n):
+                                white_remove(position, n)
                             if not (wKing(n) in total_attacks_black(n)):
                                 if not (bKing(n) in total_attacks_white(n)):
                                     new_black_state.append((game_state_black[n], game_state_white[n]))
-
                                     newbrook1move.append(brook1move[n])
                                     newbrook2move.append(1)
-
                                     newwrook1move.append(wrook1move[n])
                                     newwrook2move.append(wrook2move[n])
 
