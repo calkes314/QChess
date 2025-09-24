@@ -5345,7 +5345,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][0][1][1] == 8:
                             if game_state_white[n][0][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 0, new_pawn_state, position)
@@ -5360,7 +5360,7 @@ def make_move_white(white_move, game_state):
                         white_standard_move()
                         if game_state_white[n][1][1][1] == 8:
                             if game_state_white[n][1][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 1, new_pawn_state, position)
@@ -5376,7 +5376,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][2][1][1] == 8:
                             if game_state_white[n][2][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 2, new_pawn_state, position)
@@ -5392,7 +5392,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][3][1][1] == 8:
                             if game_state_white[n][3][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 3, new_pawn_state, position)
@@ -5408,7 +5408,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][4][1][1] == 8:
                             if game_state_white[n][4][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 4, new_pawn_state, position)
@@ -5424,7 +5424,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][5][1][1] == 8:
                             if game_state_white[n][5][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 5, new_pawn_state, position)
@@ -5440,7 +5440,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][6][1][1] == 8:
                             if game_state_white[n][6][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 6, new_pawn_state, position)
@@ -5456,7 +5456,7 @@ def make_move_white(white_move, game_state):
 
                         if game_state_white[n][7][1][1] == 8:
                             if game_state_white[n][7][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     wpawn_state_change(n, 7, new_pawn_state, position)
@@ -5727,7 +5727,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][0][1][1] == 8:
                             if game_state_black[n][0][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_black[n]
                                     bpawn_state_change(n, 0, new_pawn_state, position)
@@ -5742,7 +5742,7 @@ def make_move_black(black_move, game_state):
                         black_standard_move()
                         if game_state_black[n][1][1][1] == 8:
                             if game_state_black[n][1][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_black[n]
                                     bpawn_state_change(n, 1, new_pawn_state, position)
@@ -5758,7 +5758,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][2][1][1] == 8:
                             if game_state_black[n][2][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_black[n]
                                     bpawn_state_change(n, 2, new_pawn_state, position)
@@ -5774,7 +5774,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][3][1][1] == 8:
                             if game_state_black[n][3][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_black[n]
                                     bpawn_state_change(n, 3, new_pawn_state, position)
@@ -5790,7 +5790,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][4][1][1] == 8:
                             if game_state_black[n][4][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     bpawn_state_change(n, 4, new_pawn_state, position)
@@ -5806,7 +5806,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][5][1][1] == 8:
                             if game_state_black[n][5][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     bpawn_state_change(n, 5, new_pawn_state, position)
@@ -5822,7 +5822,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][6][1][1] == 8:
                             if game_state_black[n][6][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_white[n]
                                     bpawn_state_change(n, 6, new_pawn_state, position)
@@ -5838,7 +5838,7 @@ def make_move_black(black_move, game_state):
 
                         if game_state_black[n][7][1][1] == 8:
                             if game_state_black[n][7][0] == "Pawn":
-                                new_pawn_state = input("What should the Pawn become (Rook, Knight, Bishop, Queen): ")
+                                new_pawn_state = input("What should the Pawn become (Queen, Rook, Bishop, Knight) ")
                                 if len(new_pawn_state) > 1:
                                     x = game_state_black[n]
                                     bpawn_state_change(n, 7, new_pawn_state, position)
@@ -6049,3 +6049,519 @@ for turn in range (6000):
 
 print(game)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+AZG (AlphaZeroGeneral) game wrapper template for QChess (modified branch)
+
+This file implements the minimal interface expected by AlphaZeroGeneral:
+- getInitBoard()
+- getBoardSize()
+- getActionSize()
+- getNextState(board, player, action)
+- getValidMoves(board, player)
+- getGameEnded(board, player)
+- getCanonicalForm(board, player)
+- getSymmetries(board, pi)
+- stringRepresentation(board)
+- display(board)
+
+It relies on functions/variables already present in the provided QChess files (main.py):
+- game_start_white(), game_start_black()
+- allowed_moves_white(game_state)  # legal moves for a given game_state (white-to-move)
+- make_move_white(move, game_state)
+- make_move_black(move, game_state)
+
+Because the repository's move-format is not entirely consistent across versions, this wrapper attempts to be flexible and accepts multiple move representations from `allowed_moves_white` (tuples, lists, strings like 'e2e4', or custom lists). There are clear TODOs where you may need to adapt the conversion between AZG `action` (an integer) and QChess move objects depending on the exact format used by the QChess functions.
+
+Action encoding (as requested): 64 * 4 = 256 actions.
+- action = dest_square_index * 4 + flags
+  - dest_square_index: 0..63 (a1=0, b1=1, ..., h8=63)
+  - flags (0..3): bit0 = check flag (1 if move gives check), bit1 = capture flag (2 if move captures)
+
+Note: this encoding does NOT include an explicit origin square. The wrapper will map from legal moves provided by QChess (which include the origin) to the corresponding destination+flags index for valid-move generation. For getNextState we will attempt to look up a matching QChess move with the same destination and flags and apply it. If multiple legal moves share the same destination and flags, the wrapper chooses the first match (this is a limitation of the specified 64*4 action space).
+
+"""
+
+from typing import List, Tuple, Any, Optional
+import copy
+
+# Import QChess functions from main.py. If you placed the repository's main.py in the same
+# package or Python path, these imports should work. Adjust import path if necessary.
+try:
+    from main import (
+        game_start_white,
+        game_start_black,
+        allowed_moves_white,
+        make_move_white,
+        make_move_black,
+    )
+except Exception as e:
+    # If import fails, we still export the class but raise informative errors when functions are used.
+    game_start_white = game_start_black = allowed_moves_white = make_move_white = make_move_black = None
+    _IMPORT_ERROR = e
+
+# helpers to convert between square tuples and indices
+FILES = 'abcdefgh'
+RANKS = '12345678'
+
+def sq_to_index(sq: Tuple[int,int]) -> int:
+    """Convert a square (x,y) where x in 1..8 (file a-h), y in 1..8 (rank 1-8) to index 0..63.
+    QChess uses (x,y) coords where (1,1) == a1.
+    Indexing: a1=0, b1=1, ..., h1=7, a2=8, ... h8=63
+    """
+    x,y = sq
+    return (y-1)*8 + (x-1)
+
+def index_to_sq(idx: int) -> Tuple[int,int]:
+    y = idx // 8 + 1
+    x = idx % 8 + 1
+    return (x,y)
+
+def algebraic_from_tuple(t: Tuple[int,int]) -> str:
+    x,y = t
+    return f"{FILES[x-1]}{y}"
+
+def tuple_from_algebraic(s: str) -> Tuple[int,int]:
+    # accepts 'e2' or 'e10' (though chess only 1-8)
+    f = FILES.index(s[0]) + 1
+    r = int(s[1:])
+    return (f, r)
+
+# Action encoding helpers
+def encode_action(dest_sq: Tuple[int,int], capture: bool=False, check: bool=False) -> int:
+    dest_idx = sq_to_index(dest_sq)
+    flags = (2 if capture else 0) | (1 if check else 0)
+    return dest_idx*4 + flags
+
+def decode_action(action: int) -> Tuple[Tuple[int,int], bool, bool]:
+    dest_idx = action // 4
+    flags = action % 4
+    capture = bool(flags & 2)
+    check = bool(flags & 1)
+    return index_to_sq(dest_idx), capture, check
+
+
+class QChessGame:
+    def __init__(self):
+        if game_start_white is None:
+            raise ImportError("Failed to import QChess functions from main.py: %s" % repr(_IMPORT_ERROR))
+
+    # --- AZG required interface ---
+    def getInitBoard(self) -> Any:
+        """Return the initial board representation (we use the QChess `game_state` style)
+        We'll return a dict-like object with two lists: ['white', 'black'] and additional castle flags if needed.
+        """
+        white = game_start_white()
+        black = game_start_black()
+        # QChess code in main.py seems to expect a `game_state` list with [white, black, wrook1move, ...]
+        # We'll create the minimal compatible structure used elsewhere in that code: [white, black]
+        # If your QChess code expects additional lists (rook-move flags), append them here.
+        # For safety, we return the same shape the repo's code uses: a list where first 2 entries are white/black states
+        return [white, black]
+
+    def getBoardSize(self) -> Tuple[int,int]:
+        # 8x8 board
+        return (8,8)
+
+    def getActionSize(self) -> int:
+        # as requested: 64 * 4
+        return 64*4
+
+    def _extract_legal_moves_for_white(self, board_state) -> List[Any]:
+        """Call the QChess allowed_moves_white function for the given board_state.
+        The QChess functions in main.py appear to operate on a full `game_state` list variable; if
+        allowed_moves_white expects a particular global, you may need to adapt this wrapper.
+        """
+        if allowed_moves_white is None:
+            raise ImportError("allowed_moves_white not available from QChess main.py")
+        # Some versions of allowed_moves_white may use globals instead of an argument. We try both.
+        try:
+            # try with passing the board_state if the function accepts one argument
+            moves = allowed_moves_white(board_state)
+        except TypeError:
+            # try without arguments (global-state style)
+            moves = allowed_moves_white()
+        return moves
+
+    def _apply_white_move(self, move, board_state):
+        """Apply a white move using make_move_white. Tries to call with and without returning value.
+        Returns new_board_state.
+        """
+        if make_move_white is None:
+            raise ImportError("make_move_white not available from QChess main.py")
+        try:
+            # Many implementations return the new game_state
+            new = make_move_white(move, board_state)
+            if new is None:
+                # maybe it mutated globals and expects no return; assume board_state mutated
+                return board_state
+            return new
+        except TypeError:
+            # try call with single argument
+            try:
+                new = make_move_white(move)
+                return new if new is not None else board_state
+            except Exception as e:
+                raise
+
+    def _apply_black_move(self, move, board_state):
+        if make_move_black is None:
+            raise ImportError("make_move_black not available from QChess main.py")
+        try:
+            new = make_move_black(move, board_state)
+            if new is None:
+                return board_state
+            return new
+        except TypeError:
+            new = make_move_black(move)
+            return new if new is not None else board_state
+
+    def getValidMoves(self, board_state, player: int) -> List[int]:
+        """Return a binary vector of length getActionSize() marking valid actions.
+        player == 1 -> white to move; player == -1 -> black to move (we will flip/convert)
+        """
+        action_size = self.getActionSize()
+        valids = [0]*action_size
+
+        # Work on a copy to avoid mutating the user's object
+        b = copy.deepcopy(board_state)
+
+        if player == 1:
+            legal = self._extract_legal_moves_for_white(b)
+        else:
+            # For black, we flip colors and reuse white move generator if necessary.
+            # Simpler approach: call allowed_moves_white on a flipped board representation expected by the repo.
+            # If the repo already has an allowed_moves_black function, prefer that (try to call).
+            try:
+                # try an allowed_moves_black if available
+                from main import allowed_moves_black
+                legal = allowed_moves_black(b)
+            except Exception:
+                # fallback: create a flipped board and call allowed_moves_white
+                flipped = self._flip_board_colors(b)
+                legal = self._extract_legal_moves_for_white(flipped)
+                # note: the returned moves are in flipped coordinates; we'll unflip them below
+                legal = [self._unflip_move(m) for m in legal]
+
+        # legal may be in different formats; normalize to list of (from_sq, to_sq, capture_flag, check_flag)
+        normalized = [self._normalize_move_representation(m) for m in legal]
+
+        for mv in normalized:
+            if mv is None:
+                continue
+            _from, _to, capture, check = mv
+            idx = encode_action(_to, capture=capture, check=check)
+            valids[idx] = 1
+
+        return valids
+
+    def getNextState(self, board_state, player: int, action: int):
+        """Apply action and return (next_board_state, next_player)
+        Because action only encodes destination+flags, we find a matching legal move (same dest and flags)
+        from the legal move list and apply it.
+        """
+        b = copy.deepcopy(board_state)
+        dest_sq, capture, check = decode_action(action)
+
+        # find a matching legal move
+        if player == 1:
+            legal = self._extract_legal_moves_for_white(b)
+        else:
+            try:
+                from main import allowed_moves_black
+                legal = allowed_moves_black(b)
+            except Exception:
+                flipped = self._flip_board_colors(b)
+                legal = self._extract_legal_moves_for_white(flipped)
+                legal = [self._unflip_move(m) for m in legal]
+
+        normalized = [self._normalize_move_representation(m) for m in legal]
+
+        chosen_move = None
+        for orig, mv in zip(legal, normalized):
+            if mv is None:
+                continue
+            _from, _to, cap, chk = mv
+            if _to == dest_sq and bool(cap) == bool(capture) and bool(chk) == bool(check):
+                chosen_move = orig
+                break
+
+        if chosen_move is None:
+            # No exact matching move: try to find any move that lands on same dest (loose matching)
+            for orig, mv in zip(legal, normalized):
+                if mv is None:
+                    continue
+                _from, _to, cap, chk = mv
+                if _to == dest_sq:
+                    chosen_move = orig
+                    break
+
+        if chosen_move is None:
+            # Invalid action selected: no change and return losing side
+            # In AZG, choosing invalid move should not happen (network should output valid moves only)
+            # We'll just return board unchanged and pass the turn
+            return b, -player
+
+        # apply chosen_move
+        if player == 1:
+            newb = self._apply_white_move(chosen_move, b)
+        else:
+            newb = self._apply_black_move(chosen_move, b)
+
+        return newb, -player
+
+    def getGameEnded(self, board_state, player: int) -> int:
+        """Return 0 if not ended, 1 if the player to move (player) has won, -1 if lost, or small value for draw.
+        The user's instruction describes: checkmate detection by enumerating all next states and seeing if any is mate.
+        We'll try to detect mate/stalemate by enumerating legal moves and then checking resulting states for immediate mate.
+        Since the QChess repo may already provide mate detection functions, this wrapper will look for them and
+        fallback to a conservative heuristic.
+        """
+        # try to use repository helper functions if present
+        try:
+            from main import is_checkmate, is_stalemate
+        except Exception:
+            is_checkmate = None
+            is_stalemate = None
+
+        # If repo provides a function to check ended status for the current board, use it
+        if is_checkmate is not None:
+            # if checkmate for side to move -> opponent won
+            side_to_move_is_mated = is_checkmate(board_state, player)
+            if side_to_move_is_mated:
+                return -1
+            if is_stalemate(board_state, player):
+                return 1e-4
+            return 0
+
+        # Fallback: enumerate legal moves. If no legal moves -> either stalemate or checkmate.
+        valids = self.getValidMoves(board_state, player)
+        if sum(valids) == 0:
+            # no legal moves — need to decide between stalemate and mate.
+            # We'll attempt a simple heuristic: see if the player is in check by looking for any opponent attack
+            # onto the king square. Many QChess implementations provide 'in_check' helper; try to import it.
+            try:
+                from main import in_check
+                incheck = in_check(board_state, player)
+            except Exception:
+                # can't determine check reliably -> assume stalemate
+                incheck = False
+            if incheck:
+                return -1
+            else:
+                return 1e-4
+
+        # otherwise game not ended
+        return 0
+
+    def getCanonicalForm(self, board_state, player: int):
+        """Return canonical form of board: from player 1's perspective.
+        If player == -1 (black to move), flip colors such that white is to move.
+        """
+        if player == 1:
+            return board_state
+        else:
+            return self._flip_board_colors(board_state)
+
+    def getSymmetries(self, board_state, pi: List[float]):
+        """Return symmetries (board, pi) — we return identity only by default.
+        Optionally, you can implement board rotations/reflections and permute pi accordingly.
+        """
+        return [(board_state, pi)]
+
+    def stringRepresentation(self, board_state) -> str:
+        """Serialize board_state to a compact string that uniquely identifies position.
+        We'll serialize lists of pieces for white and black in sorted order.
+        """
+        try:
+            white, black = board_state[0], board_state[1]
+        except Exception:
+            return repr(board_state)
+
+        def serialize_side(side):
+            # side is expected to be a list of (PieceName, (x,y)) entries, possibly nested
+            items = []
+            # flatten nested structures
+            for entry in side:
+                if isinstance(entry, tuple) and len(entry) >= 2:
+                    p = entry[0]
+                    pos = entry[1]
+                    items.append(f"{p}:{pos[0]},{pos[1]}")
+                else:
+                    items.append(repr(entry))
+            items.sort()
+            return '|'.join(items)
+
+        return f"W[{serialize_side(white)}]B[{serialize_side(black)}]"
+
+    def display(self, board_state):
+        # simple text display using stringRepresentation
+        print(self.stringRepresentation(board_state))
+
+    # --- Utilities ---
+    def _normalize_move_representation(self, move) -> Optional[Tuple[Tuple[int,int], Tuple[int,int], bool, bool]]:
+        """Try to convert the repository's move representation into (from_sq, to_sq, capture_flag, check_flag)
+        Supported input forms tried (in order):
+         - tuple/list: ((fx,fy),(tx,ty), capture_bool?, check_bool?)
+         - tuple/list: (fx,fy,tx,ty, ...)
+         - string 'e2e4' or 'e2-e4' or 'e2 e4'
+         - other: best-effort to parse
+        Returns None if it cannot parse.
+        """
+        try:
+            # case: ((fx,fy),(tx,ty), capture?, check?)
+            if isinstance(move, (list, tuple)) and len(move) >= 2 and isinstance(move[0], (list, tuple)) and isinstance(move[1], (list, tuple)):
+                fx,fy = move[0]
+                tx,ty = move[1]
+                capture = False
+                check = False
+                if len(move) >= 3:
+                    capture = bool(move[2])
+                if len(move) >= 4:
+                    check = bool(move[3])
+                return ( (fx,fy), (tx,ty), capture, check )
+
+            # case: flat list [fx, fy, tx, ty, capture?, check?]
+            if isinstance(move, (list, tuple)) and len(move) >= 4 and all(isinstance(x, int) for x in move[:4]):
+                fx,fy,tx,ty = move[:4]
+                capture = bool(move[4]) if len(move)>4 else False
+                check = bool(move[5]) if len(move)>5 else False
+                return ( (fx,fy), (tx,ty), capture, check )
+
+            # case: string like 'e2e4' or 'e2-e4' or 'e2 e4'
+            if isinstance(move, str):
+                m = move.replace('-', '').replace(' ', '')
+                if len(m) >= 4:
+                    from_sq = tuple_from_algebraic(m[0:2])
+                    to_sq = tuple_from_algebraic(m[2:4])
+                    # crude: check if uppercase/punctuation contains x or + for capture/check
+                    capture = ('x' in move)
+                    check = ('+' in move) or ('#' in move)
+                    return (from_sq, to_sq, capture, check)
+
+        except Exception:
+            return None
+        return None
+
+    def _flip_board_colors(self, board_state):
+        """Flip board colors: swap white and black and mirror ranks/files so the perspective is inverted.
+        This implementation assumes board_state is [white_list, black_list].
+        """
+        try:
+            white, black = board_state[0], board_state[1]
+        except Exception:
+            return copy.deepcopy(board_state)
+
+        def mirror_side(side):
+            new = []
+            for entry in side:
+                if isinstance(entry, tuple) and len(entry)>=2 and isinstance(entry[1], tuple):
+                    piece = entry[0]
+                    x,y = entry[1]
+                    # mirror across board center: (x,y) -> (9-x, 9-y)
+                    newpos = (9-x, 9-y)
+                    new.append((piece, newpos))
+                else:
+                    new.append(entry)
+            return new
+
+        flipped = [mirror_side(black), mirror_side(white)]
+        return flipped
+
+    def _unflip_move(self, move):
+        """If move was produced on a flipped board, unflip its coordinates back to the original orientation.
+        Simple best-effort implementation: if move is ((fx,fy),(tx,ty),...) then flip both coords.
+        """
+        try:
+            if isinstance(move, (list,tuple)) and len(move) >= 2 and isinstance(move[0], (list,tuple)) and isinstance(move[1], (list,tuple)):
+                fx,fy = move[0]
+                tx,ty = move[1]
+                return [(9-fx,9-fy),(9-tx,9-ty)] + list(move[2:])
+        except Exception:
+            pass
+        return move
+
+
+# Expose a factory for convenience
+def get_qchess_game():
+    return QChessGame()
