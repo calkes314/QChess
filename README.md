@@ -1,3 +1,5 @@
+Note: This is the first nontrivial coding project I undertook. The code is accordingly bad, but it works and I learned from it the value of functions, commenting and not using too many for-loops
+
 # QChess
 A chess-variant, in which you only state to which square you move, and the game then is a superposition of all game-states in which this is possible, as soon as you make a move that is only possible in some of the states, the game collapses into only those states. The game ends once a player checkmates the opponent in one of the states or a player cannot move in any state.
 
